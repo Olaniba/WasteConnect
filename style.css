@@ -42,7 +42,19 @@ header {
     gap: 10px;
     font-size: 1.7rem;
     font-weight: 700;
-    letter-spacing: 1px;
+}
+
+button{
+    background-color: rgb(85, 147, 85);
+    border-radius: 5px;
+    height: 30px;
+    width: 50px;
+    border: solid green;
+}
+
+button:hover{
+    background-color: greenyellow;
+    transform: scale(1.1);
 }
 
 .logo i {
@@ -128,6 +140,7 @@ button:hover {
     margin-bottom: 40px;
     margin-top: 20px;
     box-shadow: 0 8px 24px green;
+    text-decoration: none;
 }
 
 .section-title {
@@ -152,7 +165,7 @@ button:hover {
     transition: transform 0.3s ease;
 }
 
-.feature-card:hover, .feature:hover {
+.feature-card:hover, .feature:hover, .step:hover {
     transform: translateY(-10px);
 }
 
@@ -176,8 +189,8 @@ footer {
     align-items: center;    /* Center horizontally */
     gap: 24px;
     color: white;
-    border-radius: 0;
-    background: none;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .footer-brand {
