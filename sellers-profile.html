@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seller's Profile – WasteConnect</title>
+  <link rel="stylesheet" href="seller.css">
+  <style>
+    body {
+      background: antiquewhite;
+      color: #14532d;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      background: #14532d;
+      box-shadow: 0 2px 8px rgba(20,83,45,0.08);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 0 24px;
+      min-height: 56px;
+    }
+    nav a {
+      color: #d4ffb2;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 12px 0;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: 32px auto 0 auto;
+      padding: 0 16px;
+    }
+    .profile-card {
+      background: #f8fff4;
+      border: 1px solid #d4ffb2;
+      border-radius: 12px;
+      padding: 32px 24px;
+      color: #14532d;
+      margin-top: 32px;
+      box-shadow: 0 2px 8px rgba(20,83,45,0.05);
+      text-align: center;
+    }
+    footer {
+      background: #14532d;
+      color: #fff;
+      text-align: center;
+      padding: 18px 0 12px 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="sellers-items.html">Seller's Items</a>
+      <a href="sellers-profile.html">Seller's Profile</a>
+      <a href="seller.html">Seller's Items Listing</a>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="profile-card">
+      <h2>Seller's Profile</h2>
+      <div style="margin: 18px 0;">
+        <div style="font-size:1.1rem;margin-bottom:8px;"><strong>Name:</strong> John Doe</div>
+        <div style="font-size:1.1rem;margin-bottom:8px;"><strong>Email:</strong> johndoe@email.com</div>
+        <div style="font-size:1.1rem;"><strong>Amount Earned:</strong> ₦0</div>
+      </div>
+      <p style="color:#228B22;">Update your profile details soon!</p>
+    </div>
+  </div>
+  <footer>
+    <strong>© 2025 WasteConnect • Empowering communities to recycle & earn</strong>
+  </footer>
+</body>
+</html>
