@@ -18,6 +18,9 @@ body{
     width: 440px;
     height: 480px;
     padding: 30px;
+    border: 2px solid ;
+    border-radius: 5%;
+
 }
 .login-header{
     text-align: center;
