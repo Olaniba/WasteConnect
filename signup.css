@@ -107,7 +107,7 @@ section a{
 .sign-up-link{
     font-size: 15px;
     text-align: center;
-    margin-top: 15px;
+    margin: 10px 0 40px 0;
 }
 .sign-up-link a{
     color: #000;
