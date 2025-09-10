@@ -51,6 +51,8 @@ header nav ul{
     margin-top: 15px;
     padding: 10px;
     text-align: center;
+    text-decoration: none;
+    border-radius: 15px;
 }
 button{
     background-color: greenyellow;
@@ -94,6 +96,7 @@ nav a:hover {
     margin-bottom: 40px;
     margin-top: 20px;
     box-shadow: 0 8px 24px green;
+    text-decoration: none;
 }
 
 .section-title{
