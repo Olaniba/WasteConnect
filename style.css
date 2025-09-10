@@ -45,8 +45,15 @@ header nav ul{
     font-weight: 700;
 }
 
+.start{
+    background-color: greenyellow;
+    width: fit-content;
+    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
+}
 button{
-    background-color: rgb(85, 147, 85);
+    background-color: greenyellow;
     border-radius: 5px;
     height: 30px;
     width: 50px;
@@ -54,7 +61,7 @@ button{
 }
 
 button:hover{
-    background-color: greenyellow;
+    background-color: rgb(140, 239, 140);
     transform: scale(1.1);
 }
 
@@ -111,7 +118,7 @@ nav a:hover {
     transition: transform 0.3s ease;
 }
 
-.feature-card:hover, .feature:hover {
+.feature-card:hover, .feature:hover, .step:hover {
     transform: translateY(-10px);
 }
 footer{
@@ -122,6 +129,8 @@ footer{
     color: white;
     padding: 20px 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+   
 }
 
 
