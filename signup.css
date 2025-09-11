@@ -21,7 +21,7 @@ body{
     width: 440px;
     height: 480px;
     padding: 30px;
-    border: 2px solid ;
+    border: none ;
     border-radius: 5%;
     background-color: aliceblue;
     box-shadow: #222;
@@ -35,6 +35,7 @@ h3{
     margin: -10px 0 15px 0;
 }
 p{
+    text-align: center;
     margin: 0 0 10px 10px;
     color: rgb(101, 101, 101);
 }
