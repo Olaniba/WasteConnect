@@ -83,12 +83,11 @@
 
 
     <script>
-        // Function to auto-fill login form
         function fillLogin(email, password) {
             document.getElementById('email').value = email;
             document.getElementById('password').value = password;
             
-            // Show a brief visual confirmation
+           
             const btn = document.getElementById('submit-btn');
             btn.style.backgroundColor = '#4caf50';
             setTimeout(() => {
@@ -96,34 +95,34 @@
             }, 300);
         }
         
-        // Handle form submission
+        
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             
-            // Simple validation
+            
             if (!email || !password) {
                 showNotification('Please enter both email and password', 'error');
                 return;
             }
             
-            // Check if it's a demo account
+           
             const isDemoAccount = email.endsWith('@wasteconnect.demo') && password === 'pass123';
             
             if (isDemoAccount) {
-                // Show success notification
+                
                 showNotification('Login successful! Redirecting...', 'success');
                 
-                // Determine user type and redirect accordingly
+               
                 setTimeout(function() {
                     if (email.includes('seller')) {
                         window.location.href = 'seller.html';
                     } else if (email.includes('buyer')) {
                         window.location.href = 'buyers.html';
                     } else {
-                        // Default to seller dashboard
+                        
                         window.location.href = 'seller.html';
                     }
                 }, 1500);
@@ -132,30 +131,27 @@
             }
         });
         
-        // Function to show notification
         function showNotification(message, type) {
             const notification = document.getElementById('notification');
             notification.textContent = message;
             
-            // Set background color based on type
+           
             if (type === 'error') {
                 notification.style.background = '#f44336';
             } else {
                 notification.style.background = '#4caf50';
             }
             
-            // Show notification
+            
             notification.classList.add('show');
             
-            // Hide after 3 seconds
+    
             setTimeout(function() {
                 notification.classList.remove('show');
             }, 3000);
         }
         
-        // Auto-fill the first demo account for convenience
         window.onload = function() {
-            // Pre-fill with a demo account
             setTimeout(() => {
                 fillLogin('seller1@wasteconnect.demo', 'pass123');
             }, 500);
