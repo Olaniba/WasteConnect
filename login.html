@@ -7,37 +7,155 @@
     <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div class="login-box">
+     <div class="login-container">
         <div class="login-header">
-            <header>
-                <h1>Welcome to WasteConnect</h1>
-            </header>
+            <h1>Welcome to WasteConnect</h1>
+            <p>Please enter your login details</p>
         </div>
-        <h3>Login</h3>
-        <p>Please enter your login details</p>
-        <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required> 
-        </div>
-        <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
-        </div>
-        <div class="forgot">
-            <section>
-                <input type="checkbox" id="check">
-                <label for="check">Remember me</label>
-            </section>
-            <section>
-                <a href="#">Forgot password</a>
-            </section>
-        </div>
-        <div class="input-submit">
-            <button class="submit-btn"></button>
-            <label for="submit">Sign In</label>
-        </div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="text" class="input-field" id="email" placeholder="Enter your email" autocomplete="off" required> 
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" class="input-field" id="password" placeholder="Enter your password" autocomplete="off" required>
+            </div>
+            
+            <div class="remember-forgot">
+                <div class="remember">
+                    <input type="checkbox" id="check">
+                    <label for="check">Remember me</label>
+                </div>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+        
         <div class="sign-up-link">
             <p>Don't have account? <a href="signup.html">Sign Up</a></p>
         </div>
+        
+        <div class="demo-section">
+            <h3 class="demo-title">Demo Accounts (Click to use)</h3>
+            
+            <div class="account-type">Seller Accounts</div>
+            
+            <div class="demo-account" onclick="fillLogin('seller1@wasteconnect.demo', 'pass123')">
+                <h4>Plastic Waste Seller</h4>
+                <p><strong>Email:</strong> seller1@wasteconnect.demo</p>
+                <p><strong>Password:</strong> pass123</p>
+            </div>
+            
+            <div class="demo-account" onclick="fillLogin('seller2@wasteconnect.demo', 'pass123')">
+                <h4>Recycling Business</h4>
+                <p><strong>Email:</strong> seller2@wasteconnect.demo</p>
+                <p><strong>Password:</strong> pass123</p>
+            </div>
+            
+            <div class="account-type">Buyer Accounts</div>
+            
+            <div class="demo-account" onclick="fillLogin('buyer1@wasteconnect.demo', 'pass123')">
+                <h4>Recycling Company</h4>
+                <p><strong>Email:</strong> buyer1@wasteconnect.demo</p>
+                <p><strong>Password:</strong> pass123</p>
+            </div>
+            
+            <div class="demo-account" onclick="fillLogin('buyer2@wasteconnect.demo', 'pass123')">
+                <h4>Manufacturing Plant</h4>
+                <p><strong>Email:</strong> buyer2@wasteconnect.demo</p>
+                <p><strong>Password:</strong> pass123</p>
+            </div>
+            
+            <p class="instructions">Click on any demo account to auto-fill the form, then click "Sign In"</p>
+            
+            <div class="debug-info" id="debugInfo">
+                <strong>Debug Info:</strong>
+                <div id="debugContent"></div>
+            </div>
+        </div>
     </div>
     
+    <div class="notification" id="notification">Login successful! Redirecting...</div>
+
+
+    <script>
+        function fillLogin(email, password) {
+            document.getElementById('email').value = email;
+            document.getElementById('password').value = password;
+            
+           
+            const btn = document.getElementById('submit-btn');
+            btn.style.backgroundColor = '#4caf50';
+            setTimeout(() => {
+                btn.style.backgroundColor = '#232323';
+            }, 300);
+        }
+        
+        
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            
+            if (!email || !password) {
+                showNotification('Please enter both email and password', 'error');
+                return;
+            }
+            
+           
+            const isDemoAccount = email.endsWith('@wasteconnect.demo') && password === 'pass123';
+            
+            if (isDemoAccount) {
+                
+                showNotification('Login successful! Redirecting...', 'success');
+                
+               
+                setTimeout(function() {
+                    if (email.includes('seller')) {
+                        window.location.href = 'seller.html';
+                    } else if (email.includes('buyer')) {
+                        window.location.href = 'buyers.html';
+                    } else {
+                        
+                        window.location.href = 'seller.html';
+                    }
+                }, 1500);
+            } else {
+                showNotification('Invalid credentials. Please use a demo account.', 'error');
+            }
+        });
+        
+        function showNotification(message, type) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            
+           
+            if (type === 'error') {
+                notification.style.background = '#f44336';
+            } else {
+                notification.style.background = '#4caf50';
+            }
+            
+            
+            notification.classList.add('show');
+            
+    
+            setTimeout(function() {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        window.onload = function() {
+            setTimeout(() => {
+                fillLogin('seller1@wasteconnect.demo', 'pass123');
+            }, 500);
+        };
+    </script>
 </body>
 </html>
