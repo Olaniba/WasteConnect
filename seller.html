@@ -1,118 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WasteConnect – Seller's Dashboard</title>
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="seller.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteConnect – Seller's Dashboard</title>
+    <link rel="stylesheet" href="seller.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="logo" aria-hidden="true">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 2l3.5 6H20l-5 4 2 8-5-4-5 4 2-8-5-4h4.5L12 2z"/>
-      </svg>
-    </div>
-    <div class="titlewrap">
-      <div class="appname">Seller's Dashboard</div>
-      <div class="subtitle">WasteConnect • Help reduce waste & Earn</div>
-    </div>
-    <span class="pill" style="margin-left:auto">Logged in as Seller</span>
-  </header>
-
-  <main class="page">
-    <div class="container">
-      <section class="card">
-        <div class="card-header">
-          <h2>Waste Details</h2>
-          <span class="hint">Fill in the details below</span>
-        </div>
+    <header>
+        <h2>Seller's Dashboard</h2>
+        <span class="status">Logged in as Seller</span>
+    </header>
+    <main>
+        <h3>Waste Details</h3>
+        <p>Fill in the details below</p>
 
         <form>
-          <div class="grid">
-            <div class="field">
-              <label class="label required" for="title">Title</label>
-              <input id="title" type="text" placeholder="e.g. Clean Plastic Bottles" required>
-            </div>
+            <label for="title">Title</label>
+            <input type="text" id="title" placeholder="e.g. Clean Plastic Bottles" required>
 
-            <div class="field select-wrap">
-              <label class="label required" for="type">Plastic Type</label>
-              <select id="type" required>
-                <option value="">Select plastic type</option>
-                <option>🥤 PET (Plastic Bottles)</option>
-                <option>🧴 HDPE (Milk & Detergent Bottles)</option>
-                <option>🛍️ LDPE / Nylon (Plastic Bags & Wraps)</option>
-                <option>🍦 PP (Yogurt Cups & Caps)</option>
-                <option>🚰 PVC (Pipes & Packaging)</option>
-                <option>♻️ Mixed Plastics</option>
-              </select>
-            </div>
+            <label for="type">Plastic Type</label>
+            <select id="type" required>
+                <option value="">Select Plastic Type</option>
+                <option>🥤PET (Plastic Bottles)</option>
+                <option>🧴HDPE (Milk & Detergent Bottles)</option>
+                <option>🛍️LDPE/Nylon (Plastic Bags)</option>
+                <option>🍦PP (Yoghurt Cups & Caps)</option>
+                <option>🚰PVC (Pipes & Packaging)</option>
+                <option>♻️Mixed Plastics</option>
+            </select>
+            <label for="weight">Weight</label>
+            <input type="number" id="weight" placeholder="e.g. 25">
 
-            <div class="field inline">
-              <div class="suffix">
-                <label class="label required" for="weight">Weight</label>
-                <input id="weight" type="number" min="0" step="0.1" placeholder="25">
-                <span>kg</span>
-              </div>
-              <div class="suffix">
-                <label class="label required" for="price">Price/ kg</label>
-                <input id="price" type="number" min="0" step="1" placeholder="15">
-                <span>₦</span>
-              </div>
-            </div>
+            <label for="price">Price / kg</label>
+            <input type="number" id="price" placeholder="e.g. 15" required>
 
-            <div class="field">
-              <label class="label" for="location">Location</label>
-              <input id="location" type="text" placeholder="e.g. Alkali Road, Kaduna">
-            </div>
+            <label for="location">Location</label>
+            <input type="text" id="location" placeholder="e.g. Alkali Road, Kaduna">
 
-            <div class="field">
-              <label class="label" for="desc">Description</label>
-              <textarea id="desc" placeholder="Describe the condition and details…"></textarea>
-            </div>
+            <label for="desc">Description</label>
+            <textarea id="desc" rows="3" placeholder="Descripe the condition and details..."></textarea>
 
-            <div class="field">
-              <label class="label" for="photos">Photos</label>
-              <div class="dropzone" id="photos" aria-label="Upload Area" role="button" tabindex="0">
-                <svg class="icon" width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 5v14M5 12h14" stroke="#1a9b49" stroke-width="2.2" stroke-linecap="round"/>
-                </svg>
-                <div>Tap to add photos</div>
-                <small>0/5 photos • Max 5MB each</small>
-              </div>
-              <a href="#" class="add-photos" onclick="return false">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 5v14M5 12h14" stroke="#168c41" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                Add More Photos
-              </a>
+            <label for="photos">Photos</label>
+            <div class="dropzone">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i><strong>Tap to add photos</strong><br>
+                <small>0/5 photos . Max 5Mb each</small>
             </div>
-          </div>
+            <button type="submit" class="secondary"><i class="fa-solid fa-plus"></i>Add More Photos</button>
 
-          <div class="form-footer">
-            <div class="field select-wrap">
-              <label class="label" for="contact">Contact Preference</label>
-              <select id="contact">
+            <label for="contact">Contact Preference</label>
+            <select id="contact" required>
                 <option>In-App</option>
                 <option>Phone Call</option>
                 <option>WhatsApp</option>
                 <option>Email</option>
-              </select>
-            </div>
+            </select>
 
-            <button type="button" class="btn-primary">Post Waste Listing</button>
-          </div>
-        </form>
-      </section>
-    </div>
-  </main>
-
-  <footer class="tiny">
-  <strong>© 2025 WasteConnect • Empowering communities to recycle & earn  
-  <br>
-  Designed with ♻️ and 💚</strong>
-</footer>
-
+            <button type="submit" id="postBtn">Post Waste Listing</button>
+        </form>    
+    </main>
+    <footer>
+        <i class="fa-regular fa-copyright"></i> 2025 WasteConnect. Empowering communities to Recycle  <i class="fa-solid fa-recycle"></i> & Earn<br>
+    </footer>
 </body>
 </html>
