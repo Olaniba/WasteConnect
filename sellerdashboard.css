@@ -1,0 +1,92 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8f9fa;
+    margin: 0%;
+    padding: 0%;
+    color: #333;
+    box-shadow: #0c8c4d;
+}
+header{
+    background: #0c8c4d;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1{
+    font-size: 18px;
+    margin: 0%;
+}
+.dashboard{
+    max-width: 900px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #0c8c4d;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+label{
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+}
+input, select, textarea{
+    width: 890px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+.row{
+    
+    gap: 15px;
+}
+.row .col{
+    flex: 1;
+}
+.photo-upload{
+    border: 2px dashed #aaa;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    color: #777;
+    background: #e1f7ec;
+}
+button{
+    background: #0c8c4d;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #0a6c3a;
+}
+footer{
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    background: #0c8c4d;
+    color: white;
+    font-size: 13px;
+}
+.login{
+    box-sizing: border-box;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: #04381d;
+}

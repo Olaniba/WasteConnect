@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sellers DashBoard</title>
+    <link rel="stylesheet" href="seller.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Sellers's Dashboard</h1>
+        <div clas="login">Logged in as seller</div>
+    </header>
+    <div class="dashboard">
+        <h2>Waste Details</h2>
+        <p>Fill in the details below</p>
+
+        <form>
+            <div>
+                <label>Title *</label>
+                <input type="text" placeholder="e.g. Clean Plastic Bottles">
+
+            </div>
+            <div>
+                <label>Plastic Type</label>
+                <select>
+                    <option>Select Plastic type</option>
+                    <option>Plastic Bottles</option>
+                    <option>Nylon Bags</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label>Weight</label>
+                    <input type="number" placeholder="e.g. 25">
+                </div>
+                <div class="col">
+                    <label>Price / kg *</label>
+                    <input type="text" placeholder="e.g 15">
+                </div>
+
+                <div>
+                    <label>Location</label>
+                    <input type="text" placeholder="e.g Alkali Road, Kaduna">
+                </div>
+                <div>
+                <label>Description</label>
+                <textarea row="3" placeholder="Describe the conditioon and details..."></textarea>
+                </div>
+                <div>
+                    <label>Photos</label>
+                    <div class="photo-upload">
+                        <p>📷 + Tap to add photos</p>
+                        <p>0/5 photos . max 5MB each</p>
+                    </div>
+                    <button type="button" style="margin-top: 10px;" background="#eee" color="#333">+Add More Photos</button>
+
+                </div>
+
+                <div>
+                    <label>Contact Preference</label>
+                    <select>
+                        <option>In-App</option>
+                        <option>Phone</option>
+                        <option>Email</option>
+                    </select>
+                </div>
+                <button type="submit">Posting Waste LIsting</button>
+        </form>
+    </div>
+
+    <footer>
+        2025 WasteConnect . Empowering communities to recycle & earn
+        <br> Design with ♻ 💚
+    </footer>
+
+
+    
+    </body>
+</html>
+    
+              
